@@ -14,24 +14,24 @@ typedef struct {
 Node* head;
 
 
-void addfront(Node* root, int data) {//³ëµå Ãß°¡
-	Node* node = (Node*)malloc(sizeof(Node));//Ãß°¡ÇÒ ³ëµå °ø°£
+void addfront(Node* root, int data) {//ë…¸ë“œ ì¶”ê°€
+	Node* node = (Node*)malloc(sizeof(Node));//ì¶”ê°€í•  ë…¸ë“œ ê³µê°„
 	node->data = data;
-	node->next = root->next;//head°¡ °¡¸®Å°´Â ³ëµå(=node1)
-	root->next = node;//Ãß°¡ÇÑ ³ëµå
+	node->next = root->next;//headê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œ(=node1)
+	root->next = node;//ì¶”ê°€í•œ ë…¸ë“œ
 }
 
 
 void add_delet(Node* root) {
 
-	Node* front = root->next;//node1À» ÀúÀå
-	root->next = front->next;//node1ÀÇ ´ÙÀ½°ø°£ node2¸¦ ÀúÀå
-	free(front);//node1ÀÇ °ø°£À» ÇÒ´çÇØÁ¦
+	Node* front = root->next;//node1ì„ ì €ì¥
+	root->next = front->next;//node1ì˜ ë‹¤ìŒê³µê°„ node2ë¥¼ ì €ì¥
+	free(front);//node1ì˜ ê³µê°„ì„ í• ë‹¹í•´ì œ
 }
 
 
 void freeAll(Node* root) {
-	Node* cur = head->next;//headÀÇ next
+	Node* cur = head->next;//headì˜ next
 	while (cur != NULL) {
 		Node* next = cur->next;
 		free(cur);
@@ -43,7 +43,7 @@ void showAll(Node* root) {
 	Node* cur = head->next;
 	while (cur != NULL) {
 		printf("%d ", cur->data);
-		cur = cur->next;//´ÙÀ½ ³ëµå¸¦ °¡¸®Å²´Ù.
+		cur = cur->next;//ë‹¤ìŒ ë…¸ë“œë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 
 	}
 }
@@ -65,6 +65,6 @@ int main(void) {
 	freeAll(head);
 
 	system("pause");
-	return 0;
+	return  0;
 
 }
