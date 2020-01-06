@@ -1,5 +1,5 @@
 
-#include<stdio.h>//포인터기반 연결리스트
+#include<stdio.h>
 #include<stdlib.h>
 
 typedef struct {
