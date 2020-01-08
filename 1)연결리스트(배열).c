@@ -35,7 +35,7 @@ void show() {
 }
 
 
-int main(void) {
+int main(void)  {
 
 
 	addfirst(5);
