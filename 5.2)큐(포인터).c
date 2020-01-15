@@ -14,7 +14,7 @@ typedef struct {
 
 	Node* front;
 	Node* rear;
-	int count;//Å¥¿¡ ´ã°ÜÀÖ´Â ¿ø¼ÒÀÇ °¹¼ö
+	int count;//íì— ë‹´ê²¨ìˆëŠ” ì›ì†Œì˜ ê°¯ìˆ˜
 
 
 }Queue;
@@ -37,7 +37,7 @@ void push(Queue* queue, int data) {
 void pop(Queue* queue) {
 
 	if (queue->count == 0) {
-		printf("¾ğ´õÇÃ·Î¿ì°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		printf("ì–¸ë”í”Œë¡œìš°ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 		return -INF;
 	}
 	Node* node = queue->front;
@@ -52,12 +52,12 @@ void pop(Queue* queue) {
 void show(Queue*queue) {
 
 	Node* cur = queue->front;
-	printf("---µ¥ÀÌÅ¸ÀÇ ¾ÕÂÊÀÔ´Ï´Ù.---");
+	printf("---ë°ì´íƒ€ì˜ ì•ìª½ì…ë‹ˆë‹¤.---");
 	while (cur != NULL) {
 		printf("%d \n", cur->data);
 		cur = cur->next;
 	}
-	printf("---µ¥ÀÌÅ¸ÀÇ µÚÂÊÀÔ´Ï´Ù.---");
+	printf("---ë°ì´íƒ€ì˜ ë’¤ìª½ì…ë‹ˆë‹¤.---");
 
 
 }
@@ -66,6 +66,7 @@ int main(void) {
 
 	Queue queue;
 	queue.front = queue.rear =NULL;
+	queue.count=0;
 	push(&queue, 8);
 	push(&queue, 7);
 	pop(&queue);
