@@ -21,6 +21,17 @@ void addfront(Node* root, int data) {//노드 추가
 	root->next = node;//추가한 노드
 }
 
+void addrear(Node*root, int data){// 맨 뒤쪽 노드 추가
+	Node* node = (Node*)malloc(sizeof(Node));//추가할 노드 공간
+	node->data = data;
+	Node*cur = root->next;
+	while(cur->next != NULL){
+		cur = cur->next;
+	}
+	cur->next = node;
+	node->next = NULL;
+}
+
 
 void add_delet(Node* root) {
 
@@ -60,6 +71,7 @@ int main(void) {
 	addfront(head, 5);
 	addfront(head, 1);
 	addfront(head, 7);
+	addrear(head, 8);
 	add_delet(head);
 	showAll(head);
 	freeAll(head);
