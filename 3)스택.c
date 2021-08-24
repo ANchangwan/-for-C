@@ -8,54 +8,46 @@ int top = -1;
 int push(int data) {
 
 	if (top == SIZE - 1) {
-		printf("-- ½ºµ•¿À¹öÇÃ·Î·¯ÀÔ´Ï´Ù.--");
+		printf("-- ìŠ¤íƒì˜¤ë²„í”Œë¡œëŸ¬ì…ë‹ˆë‹¤.--");
 		return;
 	}
 	stack[++top] = data;
-
-
-
 }
 
 int pop() {
 
 	if (top == -1)
 	{
-		printf("½ºÅÃÀÌ ºñ¿öÀÖ½À´Ï´Ù.\n");
+		printf("ìŠ¤íƒì´ ë¹„ì›ŒìˆìŠµë‹ˆë‹¤.\n");
 		return -INF;
 
 	}
 	return stack[top--];
-
-
-
 }
 
 void show() {
 
-	printf("---- ÃÖ»ó´ÜÀÔ´Ï´Ù.----\n");
+	printf("---- ìµœìƒë‹¨ì…ë‹ˆë‹¤.----\n");
 	for (int i = top; i >= 0; i--) {
 
 		printf("%d \n", stack[i]);
 	}
-	printf("----ÃÖÇÏ´ÜÀÔ´Ï´Ù.\n");
+	printf("----ìµœí•˜ë‹¨ì…ë‹ˆë‹¤.\n");
 	printf("\n");
 
 }
 
 int main(void) {
-
 	
-
+	push(1);
+	push(2);
+	push(3);
+	pop();
+	show();
 	
-
 	system("pause");
 	return 0;
-
-
-
-
-
+	
 }
-//¹è¿­À» ÀÌ¿ëÇÏ¸é ¸Ş¸ğ¸® ¿ë·®ÀÌ ºñÈ¿À²ÀûÀ¸·Î »ç¿ë µÉ ¼ö ÀÖ´Ù.
+//ë°°ì—´ì„ ì´ìš©í•˜ë©´ ë©”ëª¨ë¦¬ ìš©ëŸ‰ì´ ë¹„íš¨ìœ¨ì ìœ¼ë¡œ ì‚¬ìš© ë  ìˆ˜ ìˆë‹¤.
 //
